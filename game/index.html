@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VISTAMAR: Golden Hour</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="hurt"></div>
+
+<div id="hud" class="hidden">
+  <div id="hud-top-right">
+    <div id="hud-weapon"><span id="hud-weapon-name">FISTS</span><span id="hud-ammo"></span></div>
+    <div id="hud-money">$0</div>
+    <div id="hud-wanted"></div>
+    <div id="hud-respect">RESPECT <span id="hud-respect-rank">Nobody</span></div>
+  </div>
+  <div id="hud-objective">
+    <div id="hud-mission-title"></div>
+    <div id="hud-mission-text"></div>
+    <div id="hud-timer"></div>
+  </div>
+  <div id="hud-minimap-wrap">
+    <canvas id="hud-minimap" width="220" height="220"></canvas>
+    <div id="hud-district">VISTAMAR</div>
+    <div id="hud-bars">
+      <div class="bar"><div id="hud-health" class="fill health"></div></div>
+      <div class="bar"><div id="hud-armor" class="fill armor"></div></div>
+    </div>
+  </div>
+  <div id="hud-speed" class="hidden">
+    <span id="hud-speed-num">0</span><small>KM/H</small>
+    <div id="hud-car-name"></div>
+    <div class="bar small"><div id="hud-car-hp" class="fill car"></div></div>
+    <div class="bar small" title="Nitro"><div id="hud-nitro" class="fill nitro"></div></div>
+  </div>
+  <div id="hud-radio" class="toast"></div>
+  <div id="hud-subtitle"></div>
+  <div id="hud-feed"></div>
+  <div id="hud-hint"></div>
+  <div id="hud-crosshair">+</div>
+  <div id="hud-banner"><div id="hud-banner-big"></div><div id="hud-banner-small"></div></div>
+</div>
+
+<div id="title" class="screen">
+  <div class="title-logo"><span class="t1">VISTAMAR</span><span class="t2">GOLDEN HOUR</span></div>
+  <div class="title-tag">A sun-soaked open-world crime story on the Costa Dorada</div>
+  <div class="menu" id="title-menu">
+    <button data-act="continue" id="btn-continue">Continue</button>
+    <button data-act="new">New Story</button>
+    <button data-act="controls">Controls</button>
+    <button data-act="credits">Credits</button>
+  </div>
+  <div class="title-panel hidden" id="title-controls">
+    <h3>Controls</h3>
+    <p><b>WASD</b> move / drive &middot; <b>Mouse</b> look &amp; aim &middot; <b>Click</b> fire &middot; <b>Shift</b> sprint / nitro</p>
+    <p><b>F</b> enter, exit or jack a car &middot; <b>Space</b> handbrake / jump &middot; <b>Q / Wheel / 1-4</b> switch weapon</p>
+    <p><b>R</b> next radio station &middot; <b>E</b> use garage, shop or save point &middot; <b>M</b> city map &middot; <b>Esc</b> pause</p>
+  </div>
+  <div class="title-panel hidden" id="title-credits">
+    <h3>Credits</h3>
+    <p>VISTAMAR: Golden Hour is an original game: its city, characters, cars, music and story are all its own. Rendered with three.js. Every sound, from the engines to the radio and the police helicopter, is synthesized live with WebAudio.</p>
+  </div>
+  <div class="title-foot">Ness Calderon is back in town. The Coralinos want her gone. The port wants her quiet.</div>
+</div>
+
+<div id="pause" class="screen hidden">
+  <h2>PAUSED</h2>
+  <div class="pause-grid">
+    <div class="menu" id="pause-menu">
+      <button data-act="resume">Resume</button>
+      <button data-act="map">City Map</button>
+      <button data-act="save">Save Game</button>
+      <button data-act="volume">Sound: On</button>
+      <button data-act="quit">Quit to Title</button>
+    </div>
+    <div id="pause-stats" class="panel"></div>
+  </div>
+</div>
+
+<div id="mapview" class="screen hidden">
+  <canvas id="map-canvas" width="900" height="640"></canvas>
+  <div class="map-legend" id="map-legend"></div>
+</div>
+
+<div id="shop" class="screen hidden">
+  <div class="panel shop-panel">
+    <h2 id="shop-title"></h2>
+    <div id="shop-cash"></div>
+    <div id="shop-items"></div>
+    <div class="shop-foot">Click to buy &middot; Esc to leave</div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

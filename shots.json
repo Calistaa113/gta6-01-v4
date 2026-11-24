@@ -1,0 +1,6 @@
+[
+  { "name": "1-cover-skyhawk-chase.jpg", "query": "?shot=cover&seed=7" },
+  { "name": "2-port-varela-shootout.jpg", "query": "?shot=onfoot&seed=7" },
+  { "name": "3-neon-run-race.jpg", "query": "?shot=race&seed=7" },
+  { "name": "4-heat-wave-roadblock.jpg", "query": "?shot=roadblock&seed=7" }
+]
